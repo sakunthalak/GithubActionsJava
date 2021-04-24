@@ -1,6 +1,7 @@
 name: Java CI
 
-on: [Branch_1]
+on:
+  push[Branch_1]
 
 jobs:
   build:
