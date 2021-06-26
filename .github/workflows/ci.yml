@@ -18,5 +18,9 @@ jobs:
         run: mvn clean install
 #      - name: Execute test using TestContainers
 #        run: ./mvnw surefire:test -Dgroups="com.sdet.auto.groups.ContainersTest"
-      - uses: test execution
-      - name: mvn -Dtest=BaseTest
+      - name: "Tests run"
+        run:mvn -Dtest=BaseTest
+
+      - name: Publish Test Report
+          if: ${{ always() }}
+          uses: scacap/action-surefire-report@v1
