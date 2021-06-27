@@ -1,7 +1,7 @@
 name: Java CI
 
 on:
-  workflow_dispatch:
+    workflow_dispatch:
 
 jobs:
   build:
@@ -18,9 +18,15 @@ jobs:
         run: mvn clean install
 #      - name: Execute test using TestContainers
 #        run: ./mvnw surefire:test -Dgroups="com.sdet.auto.groups.ContainersTest"
+      - name: "sending variable to shell schript"
+        run: src/script/script1.sh "hello"
       - name: "Tests run"
-        run:mvn -Dtest=BaseTest
+        run: mvn test --batch--mode --fail-at-end
+      - name: "Publish Test Report"
+        if: ${{ always() }}
+        uses: scacap/actions-surefire-report@v1
 
-      - name: Publish Test Report
-          if: ${{ always() }}
-          uses: scacap/action-surefire-report@v1
+      - name: "Publish Test Report"
+        if: ${{ always() }}
+        uses: scacap/action-surefire-report@v1
+        run: mvn surefire-rew
