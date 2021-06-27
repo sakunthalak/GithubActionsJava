@@ -1,6 +1,8 @@
 name: ci build testing
 
 on:
+  push:
+    branches: [ 2nd_branch ]
   workflow_dispatch:
 
 jobs:
