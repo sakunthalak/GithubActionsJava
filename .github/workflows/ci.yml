@@ -27,7 +27,7 @@ jobs:
 
       - name: "sending variable to shell schript"
 
-        run: chmod +x .src/script/script1.sh "hello"
+        run: chmod +x .script1.sh hello
 
 
 
