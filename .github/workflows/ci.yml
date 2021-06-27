@@ -18,7 +18,7 @@ jobs:
         run: mvn clean install
 #      - name: Execute test using TestContainers
 #        run: ./mvnw surefire:test -Dgroups="com.sdet.auto.groups.ContainersTest"
-      - name:"sending variable to shell schript"
+      - name: "sending variable to shell schript"
         run: src/script/script1.sh "hello"
       - name: "Tests run"
         run: mvn test --batch--mode --fail-at-end
