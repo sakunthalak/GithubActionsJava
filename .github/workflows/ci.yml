@@ -22,15 +22,19 @@ jobs:
 
       - name: Build with Maven Wrapper
         run: mvn clean install
-#      - name: Execute test using TestContainers
-#        run: ./mvnw surefire:test -Dgroups="com.sdet.auto.groups.ContainersTest"
+      #      - name: Execute test using TestContainers
+      #        run: ./mvnw surefire:test -Dgroups="com.sdet.auto.groups.ContainersTest"
 
       - name: "sending variable to shell schript"
         run: src/script/script1.sh "hello"
 
-      - name: "Tests run"
-        run: mvn test --batch--mode --fail-at-end
 
-      - name: "Publish Test Report"
+
+      - name: Checkout Code
+        uses: actions/checkout@v1
+      - name: Build and Run Tests
+        run: mvn test --batch-mode --fail-at-end
+      - name: Publish Test Report
         if: ${{ always() }}
-        uses: scacap/actions-surefire-report@v1
+        uses: scacap/action-surefire-report@v1
+
