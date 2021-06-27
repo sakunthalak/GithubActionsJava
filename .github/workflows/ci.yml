@@ -26,7 +26,8 @@ jobs:
 #      #        run: ./mvnw surefire:test -Dgroups="com.sdet.auto.groups.ContainersTest"
 
       - name: "sending variable to shell schript"
-        run: src/script/script1.sh "hello"
+
+        run: chmod +x .src/script/script1.sh "hello"
 
 
 
