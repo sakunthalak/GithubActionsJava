@@ -1,6 +1,7 @@
 name: Java CI
 
 on:
+  push: [ Branch_1 ]
   workflow_dispatch:
 
 jobs:
