@@ -27,8 +27,9 @@ jobs:
 
       - name: "sending variable to shell schript"
 
-        run: chmod +x script1.sh hello
-
+        run: chmod +x script1.sh
+      - name: "pass variable"
+        run: script1.sh hell
 
 
       - name: Checkout Code
