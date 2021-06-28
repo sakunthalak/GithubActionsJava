@@ -24,12 +24,12 @@ jobs:
 #        run: mvn clean install
 #      #      - name: Execute test using TestContainers
 #      #        run: ./mvnw surefire:test -Dgroups="com.sdet.auto.groups.ContainersTest"
-
-      - name: "sending variable to shell schript"
-        run: chmod +x script1.sh
-
-      - name: "pass variable"
-        run: script1.sh hello
+#
+#      - name: "sending variable to shell schript"
+#        run: chmod +x script1.sh
+##
+#      - name: "pass variable"
+#        run: script1.sh hello
 
       - name: Build and Run Tests
         run: mvn test --batch-mode --fail-at-end
