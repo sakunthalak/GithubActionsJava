@@ -1,4 +1,5 @@
 #!/bin/sh
 #Testing shell script
-read sfUser
+read MESSAGE
+echo $MESSAGE
 
