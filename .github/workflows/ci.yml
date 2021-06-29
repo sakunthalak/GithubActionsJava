@@ -32,7 +32,7 @@ jobs:
 #        run: script1.sh hello
 
       - name: Build and Run Tests
-        run: mvn -Dtest=BaseTest test --batch-mode --fail-at-end
+        run: mvn clean test --batch-mode --fail-at-end
       - name: Publish Test Report
         if: ${{ always() }}
         uses: scacap/action-surefire-report@v1
