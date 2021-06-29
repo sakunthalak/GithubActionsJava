@@ -37,8 +37,6 @@ jobs:
         run: |
           pwd
           ls
-          cd -
-          ls
           mvn clean install
           mvn test --batch-mode --fail-at-end
 
