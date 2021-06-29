@@ -30,9 +30,14 @@ jobs:
 ##
 #      - name: "pass variable"
 #        run: script1.sh hello
+      - name: maven-settings-xml-action
+        uses: whelk-io/maven-settings-xml-action@v18
 
       - name: Build and Run Tests
-        run: mvn clean test --batch-mode --fail-at-end
+        run: |
+          mvn clean install
+          mvn test --batch-mode --fail-at-end
+
       - name: Publish Test Report
         if: ${{ always() }}
         uses: scacap/action-surefire-report@v1
