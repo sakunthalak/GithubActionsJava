@@ -46,7 +46,7 @@ public class BaseTest {
     }
     @Test
     public void verifyInvalidURL(){
-        driver.navigate().to("https://www.google11.com/");
+        driver.navigate().to("https://www.google.com/");
     }
 
     @AfterClass
