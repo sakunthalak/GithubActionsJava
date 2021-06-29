@@ -36,7 +36,9 @@ jobs:
       - name: Build and Run Tests
         run: |
           pwd
-          cd ..
+          ls
+          cd -
+          ls
           mvn clean install
           mvn test --batch-mode --fail-at-end
 
