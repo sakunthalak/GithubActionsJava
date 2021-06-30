@@ -35,10 +35,7 @@ jobs:
 
       - name: Build and Run Tests
         run: |
-          pwd
-          ls
-          mvn clean install
-          mvn test --batch-mode --fail-at-end
+          mvn clean test -DsuiteXmlFile=sample.xml --batch-mode --fail-at-end
 
       - name: Publish Test Report
         if: ${{ always() }}
